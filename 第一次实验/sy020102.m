@@ -1,0 +1,10 @@
+n=1:50;
+x=zeros(1,50);
+x(1)=1; x(2)=2.5; x(3)=2.5; x(4)=1;
+subplot(3,1,1);stem(x);title('hb的时域特性');
+k=-25:25;
+X=x*(exp(-j*pi/12.5)).^(n'*k);
+magX=abs(X);
+subplot(3,1,2);stem(magX);title('hb的幅度特性');
+angX=angle(X);
+subplot(3,1,3);stem(angX);title('hb的相位特性');

@@ -1,0 +1,16 @@
+n=0:50; A=444.128;
+a=50*sqrt(2.0)*pi; w0=50*sqrt(2.0)*pi;
+T=1/1000;
+x=A*exp(-a*n*T).*sin(w0*n*T);
+x1=fft(x); X1=abs(x1);
+subplot(3,1,1);stem(n,X1); title('T=1/1000时的幅频特性曲线');
+clear T;
+T=1/300;
+x=A*exp(-a*n*T).*sin(w0*n*T);
+x2=fft(x); X2=abs(x2);
+subplot(3,1,2);stem(n,X2);title('T=1/300时的幅频特性曲线');
+clear T;
+T=1/200;
+x=A*exp(-a*n*T).*sin(w0*n*T);
+x3=fft(x); X3=abs(x3);
+subplot(3,1,3);stem(n,X3);title('T=1/200时的幅频特性曲线');
