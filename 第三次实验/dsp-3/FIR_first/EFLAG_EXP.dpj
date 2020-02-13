@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding='ISO-8859-1'?>
+<visualdsp-project schema="17" name="EFLAG_EXP" file="EFLAG_EXP.dpj" version="1">
+	<!-- Project build target -->
+	<target>
+		<processor revision="Automatic">ADSP-BF533</processor>
+		<extension>.dxe</extension>
+		<type>Executable file</type>
+	</target>
+	<!-- Configurations -->
+	<configurations active="Debug">
+		<configuration name="Debug">
+			<intermediate-dir>.\Debug</intermediate-dir>
+			<output-dir>.\Debug</output-dir>
+			<changed-property-page-flags>0</changed-property-page-flags>
+			<tools>
+				<tool type="Compiler">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="Assembler">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="Linker">
+					<option><![CDATA[|-flags-link -MDUSE_CACHE>0|-MD>USER_CRT="EFLAG_EXP_basiccrt.doj",USE_FILEIO,__cplusplus|-Version>4.5]]></option>
+				</tool>
+				<tool type="Archiver">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="Loader">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="VdkGen">
+					<option><![CDATA[]]></option>
+				</tool>
+			</tools>
+		</configuration>
+		<configuration name="Release">
+			<intermediate-dir>.\Release</intermediate-dir>
+			<output-dir>.\Release</output-dir>
+			<changed-property-page-flags>4</changed-property-page-flags>
+			<tools>
+				<tool type="Compiler">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="Assembler">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="Linker">
+					<option><![CDATA[|-flags-link -MDUSE_CACHE>0|-MD>USER_CRT="EFLAG_EXP_basiccrt.doj",USE_FILEIO,__cplusplus|-Version>4.5]]></option>
+				</tool>
+				<tool type="Archiver">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="Loader">
+					<option><![CDATA[]]></option>
+				</tool>
+				<tool type="VdkGen">
+					<option><![CDATA[]]></option>
+				</tool>
+			</tools>
+		</configuration>
+	</configurations>
+	<!-- Project folders -->
+	<folders>
+		<folder name="Generated Files">
+			<folders>
+				<folder name="Startup">
+					<files>
+						<file name=".\EFLAG_EXP_basiccrt.s">
+							<file-configurations>
+								<file-configuration name="Debug">
+									<excluded-flag value="no"/>
+									<build-with-flag value="project"/>
+									<intermediate-dir>.\Debug</intermediate-dir>
+									<output-dir>.\Debug</output-dir>
+								</file-configuration>
+								<file-configuration name="Release">
+									<excluded-flag value="no"/>
+									<build-with-flag value="project"/>
+									<intermediate-dir>.\Release</intermediate-dir>
+									<output-dir>.\Release</output-dir>
+								</file-configuration>
+							</file-configurations>
+						</file>
+					</files>
+				</folder>
+				<folder name="User Heap">
+					<files>
+						<file name=".\EFLAG_EXP_heaptab.c">
+							<file-configurations>
+								<file-configuration name="Debug">
+									<excluded-flag value="no"/>
+									<build-with-flag value="project"/>
+									<intermediate-dir>.\Debug</intermediate-dir>
+									<output-dir>.\Debug</output-dir>
+								</file-configuration>
+								<file-configuration name="Release">
+									<excluded-flag value="no"/>
+									<build-with-flag value="project"/>
+									<intermediate-dir>.\Release</intermediate-dir>
+									<output-dir>.\Release</output-dir>
+								</file-configuration>
+							</file-configurations>
+						</file>
+					</files>
+				</folder>
+			</folders>
+		</folder>
+		<folder name="Header Files" ext=".h,.hpp,.hxx">
+			<files>
+				<file name=".\sys_func.h">
+				</file>
+				<file name=".\sys_init.h">
+				</file>
+				<file name=".\sys_res.h">
+				</file>
+			</files>
+		</folder>
+		<folder name="Linker Files" ext=".ldf,.dlb">
+			<files>
+				<file name=".\EFLAG_EXP.ldf">
+					<file-configurations>
+						<file-configuration name="Debug">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Debug</intermediate-dir>
+							<output-dir>.\Debug</output-dir>
+						</file-configuration>
+						<file-configuration name="Release">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Release</intermediate-dir>
+							<output-dir>.\Release</output-dir>
+						</file-configuration>
+					</file-configurations>
+				</file>
+			</files>
+		</folder>
+		<folder name="Source Files" ext=".c,.cpp,.cxx,.asm,.dsp,.s">
+			<files>
+				<file name=".\main.c">
+					<file-configurations>
+						<file-configuration name="Debug">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Debug</intermediate-dir>
+							<output-dir>.\Debug</output-dir>
+						</file-configuration>
+						<file-configuration name="Release">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Release</intermediate-dir>
+							<output-dir>.\Release</output-dir>
+						</file-configuration>
+					</file-configurations>
+				</file>
+				<file name=".\sys_func.c">
+					<file-configurations>
+						<file-configuration name="Debug">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Debug</intermediate-dir>
+							<output-dir>.\Debug</output-dir>
+						</file-configuration>
+						<file-configuration name="Release">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Release</intermediate-dir>
+							<output-dir>.\Release</output-dir>
+						</file-configuration>
+					</file-configurations>
+				</file>
+				<file name=".\sys_init.c">
+					<file-configurations>
+						<file-configuration name="Debug">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Debug</intermediate-dir>
+							<output-dir>.\Debug</output-dir>
+						</file-configuration>
+						<file-configuration name="Release">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Release</intermediate-dir>
+							<output-dir>.\Release</output-dir>
+						</file-configuration>
+					</file-configurations>
+				</file>
+			</files>
+		</folder>
+	</folders>
+	<!-- System Builder Components -->
+	<system-builder-component-tables>
+		<system-builder-plugin name="Startup Code Wizard" version="2.0">
+			<system-builder-component name="Advanced Options">
+				<property name="Include C++ support"><![CDATA[True]]></property>
+				<property name="Include C/C++ support"><![CDATA[True]]></property>
+				<property name="Include LDF exceptions support"><![CDATA[True]]></property>
+				<property name="Search for libraries in the tools installation directory"><![CDATA[True]]></property>
+			</system-builder-component>
+			<system-builder-component name="Cache and Memory Protection">
+				<property name="DCBS"><![CDATA[Set]]></property>
+				<property name="Data cache memory configuration"><![CDATA[RAM with no memory protection]]></property>
+				<property name="Generate support for memory protection"><![CDATA[False]]></property>
+				<property name="Instruction cache memory configuration"><![CDATA[RAM with no memory protection]]></property>
+				<property name="Write-back cache"><![CDATA[False]]></property>
+				<property name="Write-through cache"><![CDATA[False]]></property>
+			</system-builder-component>
+			<system-builder-component name="Compiler Instrumented Profiling">
+				<property name="Enable profiling"><![CDATA[False]]></property>
+				<property name="Profiling output"><![CDATA[mon.out]]></property>
+			</system-builder-component>
+			<system-builder-component name="Configuration">
+				<property name="Add LDF"><![CDATA[True]]></property>
+				<property name="Add startup code"><![CDATA[True]]></property>
+				<property name="LDF template schema"><![CDATA[3.4]]></property>
+				<property name="Startup code template schema"><![CDATA[3.8]]></property>
+			</system-builder-component>
+			<system-builder-component name="Custom system heap settings">
+				<property name="Absolute size"><![CDATA[]]></property>
+				<property name="Customize system heap"><![CDATA[True]]></property>
+				<property name="Memory types"><![CDATA[L3]]></property>
+				<property name="Minimum size"><![CDATA[2 MB]]></property>
+			</system-builder-component>
+			<system-builder-component name="Custom system stack settings">
+				<property name="Absolute size"><![CDATA[]]></property>
+				<property name="Customize system stack"><![CDATA[False]]></property>
+				<property name="Memory types"><![CDATA[L1]]></property>
+				<property name="Minimum size"><![CDATA[2 KB]]></property>
+			</system-builder-component>
+			<system-builder-component name="External memory settings">
+				<property name="Partition external memory"><![CDATA[Default]]></property>
+				<property name="Size"><![CDATA[32MB]]></property>
+				<property name="Using external memory"><![CDATA[True]]></property>
+			</system-builder-component>
+			<system-builder-component name="Linker Options">
+				<property name="Search Directory"><![CDATA[]]></property>
+			</system-builder-component>
+			<system-builder-component name="Multi-core Selection">
+				<property name="Core"><![CDATA[Core A]]></property>
+			</system-builder-component>
+			<system-builder-component name="PGO">
+				<property name="Using PGO"><![CDATA[False]]></property>
+			</system-builder-component>
+			<system-builder-component name="Processor clock and power settings">
+				<property name="Clock and power settings"><![CDATA[Optimize for speed]]></property>
+				<property name="Configure clock and power settings"><![CDATA[False]]></property>
+				<property name="EZ-KIT"><![CDATA[600 MHz ADSP-BF533 EZ-KIT (silicon revisions up to 1.6)]]></property>
+			</system-builder-component>
+			<system-builder-component name="Program Running From">
+				<property name="Internal Memory"><![CDATA[True]]></property>
+			</system-builder-component>
+			<system-builder-component name="Project Options">
+				<property name="Compiler Multicore"><![CDATA[False]]></property>
+				<property name="Configuration"><![CDATA[Debug]]></property>
+				<property name="Full IO"><![CDATA[False]]></property>
+				<property name="Intermediate Directory"><![CDATA[.\Debug]]></property>
+				<property name="Linker Multicore"><![CDATA[False]]></property>
+				<property name="Name"><![CDATA[EFLAG_EXP]]></property>
+				<property name="Silicon Revision"><![CDATA[Automatic]]></property>
+				<property name="Strict IEEE Floating Point Compliance"><![CDATA[False]]></property>
+				<property name="Use C++ exceptions libraries"><![CDATA[False]]></property>
+			</system-builder-component>
+			<system-builder-component name="Run-time Initialization">
+				<property name="I/O device initialization"><![CDATA[True]]></property>
+				<property name="Initialize data registers"><![CDATA[False]]></property>
+				<property name="Initialize return registers to zero"><![CDATA[False]]></property>
+				<property name="Run-time memory initialization"><![CDATA[False]]></property>
+			</system-builder-component>
+		</system-builder-plugin>
+	</system-builder-component-tables>
+</visualdsp-project>

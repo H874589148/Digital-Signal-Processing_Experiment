@@ -1,0 +1,58 @@
+
+#include <fract.h>
+#include <filter.h>
+#include <sys_init.h>
+
+/* FIR数据长度 			*/
+#define VEC_SIZE 32000
+/* FIR滤波器H参数个数 	*/
+#define NUM_TAPS 8
+
+/* FIR滤波输入数据 		*/
+short in[VEC_SIZE] = {0};
+
+/* FIR滤波H参数 		*/
+fract16 coefs[NUM_TAPS] =
+{
+	0xff57,
+	0xfd12,
+	0x0c62,
+	0x3735,
+	0x3735,
+	0x0c62,
+	0xfd12,
+	0xff57
+};
+
+fract16 delay[NUM_TAPS];
+
+/* FIR滤波输出数据 		*/
+short out[VEC_SIZE + NUM_TAPS - 1];
+
+/* FIR滤波器状态变量 	*/
+fir_state_fr16 state;
+
+
+/********************************************************
+*
+*	函数名        : main
+*	函数功能      : main函数
+*	函数输入参数  : 
+*	函数输出      : 
+*	说明          :  
+*
+********************************************************/
+void main(void) {
+	Init_PLL();
+	Init_EBIU();
+	Init_SDRAM();
+	/* FIR滤波初始化 	*/
+	fir_init(state, coefs, delay, NUM_TAPS, 1);
+	
+	/* FIR滤波 			*/
+	fir_fr16(in, out, VEC_SIZE, &state);
+	
+	while (1) {printf(“ok\n”);}
+	
+}
+
