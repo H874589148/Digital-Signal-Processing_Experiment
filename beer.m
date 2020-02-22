@@ -1,0 +1,15 @@
+money=10;price=2;N=money/price;
+cover=N;
+bottle=N;
+total=N;time=0;
+%while(cover/4~=0||bottle/2~=0)
+%while(floor(cover/4)>0||floor(bottle/2)>0)
+while(floor(cover)>=4||floor(bottle)>=2)
+%while(time<6)
+    total=floor(total+floor(cover/4)+floor(bottle/2));
+    cover0=floor(cover);
+    cover=floor(cover-4*floor(cover/4)+floor(bottle/2)+floor(cover/4));
+    bottle=floor(bottle-2*floor(bottle/2)+floor(bottle/2)+floor(cover0/4));
+    time=time+1;
+    fprintf('第%d次换啤酒，%d瓶啤酒，%d个盖子，%d个瓶子\n',time,total,cover,bottle);
+end
