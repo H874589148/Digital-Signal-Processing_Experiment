@@ -1,4 +1,4 @@
-money=10;price=2;N=money/price;
+money=100;price=2;N=money/price;
 cover=N;
 bottle=N;
 total=N;time=0;
