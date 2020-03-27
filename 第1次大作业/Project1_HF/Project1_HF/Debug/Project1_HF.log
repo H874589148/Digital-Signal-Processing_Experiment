@@ -1,0 +1,3 @@
+﻿  read_wav4.cpp
+f:\github_repository\digital-signal-processing_experiment\第1次大作业\project1_hf\project1_hf\read_wav4.cpp(22): warning C4305: “初始化”: 从“double”到“float”截断
+  Project1_HF.vcxproj -> F:\github_repository\Digital-Signal-Processing_Experiment\第1次大作业\Project1_HF\Debug\Project1_HF.exe
