@@ -1,0 +1,25 @@
+clear all;
+close all;
+N = 512;fs = 8000;
+[x,Fs] = audioread("bluesky_LFnoise.wav",'native');
+h =[0.01218354 -0.009012882 -0.02881839 -0.04743239 -0.04584568 -0.008692503 0.06446265 0.1544655 0.2289794 0.257883 0.2289794 0.1544655 0.06446265 -0.008692503 -0.04584568 -0.04743239 -0.02881839 -0.009012882 0.01218354];
+x1=double(x);
+y1=filter(h,1,x);
+cut1(1:540) = x1(50*180+1:53*180);
+cut2(1:540) = y1(50*180+1:53*180);
+
+[H1,w] = freqz(cut1,1,N,'whole',fs);
+Hr1 = abs(H1);
+subplot(311);plot(w,Hr1);grid on;
+title('加入低频噪声滤波前语音信号选取3个连续语音帧频域波形');
+[H2,w] = freqz(cut2,1,N,'whole',fs);
+Hr2 = abs(H2);
+subplot(312);plot(w,Hr2);grid on;
+title('加入低频噪声Matlab滤波后语音信号选取3个连续语音帧频域波形');
+[y2,Fs2] = audioread("blueskyft_LFnoise.wav",'native');
+y2=double(y2);
+cut3(1:540) = y2(50*180+1:53*180);
+[H3,w] = freqz(cut3,1,N,'whole',fs);
+Hr3 = abs(H3);
+subplot(313);plot(w,Hr3);grid on;
+title('加入低频噪声C语言滤波后语音信号选取3个连续语音帧频域波形');

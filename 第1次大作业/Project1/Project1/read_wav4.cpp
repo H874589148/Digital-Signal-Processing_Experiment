@@ -1,38 +1,35 @@
-typedef unsigned char uchar;
-typedef unsigned char uint8;
-typedef unsigned short uint16;
-typedef unsigned long uint32;
-typedef char sint8;
 typedef short sint16;
-typedef long sint32;
-typedef float fp32;
-typedef double fp64;
-
 #include <stdio.h>
 #include <iostream>
 using namespace std;
 const int length = 180;         /*语音帧长为180点=22.5ms@8kHz采样*/
 
-void filter(short xin[], short xout[], short n, float h[]);    /*滤波子程序说明*/
+void filter(short xin[], short xout[], short n, int h[]);    /*滤波子程序说明*/
 /*19点滤波器系数*/
+static int h_fixed[19] = { 798,-590,-1888, -3108,-3004,
+-569,4224,10123,15006,16900,
+15006,10123,4224,-569,-3004,
+-3108,-1888,-590,798 };
+/*
 static float h[19] =
 { 0.01218354,-0.009012882,-0.02881839,-0.04743239,-0.04584568,
 -0.008692503,0.06446265,0.1544655,0.2289794,0.257883,
 0.2289794,0.1544655,0.06446265,-0.008692503,-0.04584568,
 -0.04743239,-0.02881839,-0.009012882,0.01218354 };
+*/
 
 static int x1[length + 20];
 /*低通滤波浮点子程序*/
-void filter(short xin[], short xout[], short n, float h[])
+void filter(short xin[], short xout[], short n, int h[])
 {
 	int i, j;
-	float sum;
+	int sum;
 	for (i = 0; i < length; i++) x1[n + i - 1] = xin[i];
 	for (i = 0; i < length; i++)
 	{
-		sum = 0.0;
+		sum = 0;
 		for (j = 0; j < n; j++) sum += h[j] * x1[i - j + n - 1];
-		xout[i] = (short)sum;
+		xout[i] = (short)(sum>>16);
 	}
 	for (i = 0; i < (n - 1); i++) x1[n - i - 2] = xin[length - 1 - i];
 }
@@ -67,7 +64,7 @@ int main() {
 			for (i = 22; i < length; i++) {
 				data[counter++] = indata[i];
 			}
-			filter(data, ftdata, 19, h);
+			filter(data, ftdata, 19, h_fixed);
 			for (i = 0; i < length + 22; i++) {
 				if (i < 22)
 					outdata[i] = indata[i];
@@ -79,7 +76,7 @@ int main() {
 			}
 		}
 		else {
-			filter(indata, ftdata, 19, h);
+			filter(indata, ftdata, 19, h_fixed);
 			for (i = 0; i < length; i++) {
 				fwrite(ftdata + i, sizeof(sint16), 1, fp3);
 			}
